@@ -22,4 +22,12 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+	
+	function ceksesi()
+	{
+		$all_session_data = $this->session->all_userdata();
+		echo '<pre>';
+		print_r($all_session_data);
+		echo '</pre>';
+	}
 }

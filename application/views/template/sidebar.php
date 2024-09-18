@@ -17,97 +17,97 @@
 					<ul class="menu">
 						<li class="sidebar-title">Main Navigation</li>
 
-					
+
 						<?php if ($this->session->userdata('role') == 'Anggota') : ?>
-						<li class="sidebar-item <?= $this->uri->segment(1) == 'userpi' ? 'active' : '' ?>">
-							<a href="<?= base_url('userpi') ?>" class='sidebar-link'>
-								<i class="bi bi-grid-fill"></i>
-								<span>List Books Available</span>
-							</a>
-						</li>
-						<li class="sidebar-item <?= $this->uri->segment(1) == 'userpi/user_pinjam' ? 'active' : '' ?>">
-							<a href="<?= base_url('userpi/user_pinjam') ?>" class='sidebar-link'>
-								<i class="bi bi-grid-fill"></i>
-								<span>My Borrowed Books</span>
-							</a>
-						</li>
+							<li class="sidebar-item <?= $this->uri->segment(1) == 'userpi' ? 'active' : '' ?>">
+								<a href="<?= base_url('userpi') ?>" class='sidebar-link'>
+									<i class="bi bi-grid-fill"></i>
+									<span>List Books Available</span>
+								</a>
+							</li>
+							<li class="sidebar-item <?= $this->uri->segment(2) == 'userpi/user_pinjam' ? 'active' : '' ?>">
+								<a href="<?= base_url('userpi/user_pinjam') ?>" class='sidebar-link'>
+									<i class="bi bi-grid-fill"></i>
+									<span>My Borrowed Books</span>
+								</a>
+							</li>
 						<?php endif; ?>
-						
+
 						<?php if ($this->session->userdata('role') != 'Anggota') : ?>
-						<li class="sidebar-item <?= $this->uri->segment(1) == 'home' ? 'active' : '' ?>">
-							<a href="<?= base_url('home') ?>" class='sidebar-link'>
-								<i class="bi bi-grid-fill"></i>
-								<span>Dashboard</span>
-							</a>
-						</li>
+							<li class="sidebar-item <?= $this->uri->segment(1) == 'home' ? 'active' : '' ?>">
+								<a href="<?= base_url('home') ?>" class='sidebar-link'>
+									<i class="bi bi-grid-fill"></i>
+									<span>Dashboard</span>
+								</a>
+							</li>
 
-						<li class="sidebar-item <?= $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
-							<a href="<?= base_url('user') ?>" class='sidebar-link'>
-								<i class="bi bi-person-fill"></i>
-								<span>Pengguna</span>
-							</a>
-						</li>
+							<li class="sidebar-item <?= $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
+								<a href="<?= base_url('user') ?>" class='sidebar-link'>
+									<i class="bi bi-person-fill"></i>
+									<span>Pengguna</span>
+								</a>
+							</li>
 
-						<li class="sidebar-item <?= $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == 'kategori' ? 'active' : '' ?> has-sub">
-							<a href="#" class='sidebar-link'>
-								<i class="bi bi-book-half"></i>
-								<span>Data Book</span>
-							</a>
-							<ul class="submenu <?= $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == 'kategori' ? 'active' : '' ?>">
-								<li class="submenu-item <?= $this->uri->segment(1) == 'buku' ? 'active' : '' ?>">
-									<a href="<?= site_url('buku') ?>">Book</a>
-								</li>
-								<?php if($this->session->userdata('role')  == 'Administrator') :?>
-								<li class="submenu-item <?= $this->uri->segment(1) == 'kategori' ? 'active' : '' ?>">
-									<a href="<?= site_url('kategori') ?>">Categories</a>
-								</li>
-								<?php endif;?>
-							</ul>
-						</li>
+							<li class="sidebar-item <?= $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == 'kategori' ? 'active' : '' ?> has-sub">
+								<a href="#" class='sidebar-link'>
+									<i class="bi bi-book-half"></i>
+									<span>Data Book</span>
+								</a>
+								<ul class="submenu <?= $this->uri->segment(1) == 'buku' || $this->uri->segment(1) == 'kategori' ? 'active' : '' ?>">
+									<li class="submenu-item <?= $this->uri->segment(1) == 'buku' ? 'active' : '' ?>">
+										<a href="<?= site_url('buku') ?>">Book</a>
+									</li>
+									<?php if ($this->session->userdata('role')  == 'Administrator') : ?>
+										<li class="submenu-item <?= $this->uri->segment(1) == 'kategori' ? 'active' : '' ?>">
+											<a href="<?= site_url('kategori') ?>">Categories</a>
+										</li>
+									<?php endif; ?>
+								</ul>
+							</li>
 
 
-						<li class="sidebar-item <?= $this->uri->segment(1) == 'transaksi' || $this->uri->segment(1) == 'pengembalian' ? 'active' : '' ?> has-sub">
-							<a href="#" class='sidebar-link'>
-								<i class="bi bi-stack"></i>
-								<span>Transaction</span>
-							</a>
-							<ul class="submenu <?= $this->uri->segment(1) == 'transaksi' || $this->uri->segment(1) == 'pengembalian' ? 'active' : '' ?>">
-								<li class="submenu-item <?= $this->uri->segment(1) == 'transaksi' ? 'active' : '' ?>">
-									<a href="<?= site_url('transaksi') ?>">Borrowing</a>
-								</li>
-								<li class="submenu-item <?= $this->uri->segment(1) == 'pengembalian' ? 'active' : '' ?>">
-									<a href="<?= site_url('pengembalian') ?>">Returned</a>
-								</li>
-							</ul>
-						</li>
+							<li class="sidebar-item <?= $this->uri->segment(1) == 'transaksi' || $this->uri->segment(1) == 'pengembalian' ? 'active' : '' ?> has-sub">
+								<a href="#" class='sidebar-link'>
+									<i class="bi bi-stack"></i>
+									<span>Transaction</span>
+								</a>
+								<ul class="submenu <?= $this->uri->segment(1) == 'transaksi' || $this->uri->segment(1) == 'pengembalian' ? 'active' : '' ?>">
+									<li class="submenu-item <?= $this->uri->segment(1) == 'transaksi' ? 'active' : '' ?>">
+										<a href="<?= site_url('transaksi') ?>">Borrowing</a>
+									</li>
+									<li class="submenu-item <?= $this->uri->segment(1) == 'pengembalian' ? 'active' : '' ?>">
+										<a href="<?= site_url('pengembalian') ?>">Returned</a>
+									</li>
+								</ul>
+							</li>
 
-						<!-- <li class="sidebar-item <?= $this->uri->segment(1) == '#' ? 'active' : '' ?>">
+							<!-- <li class="sidebar-item <?= $this->uri->segment(1) == '#' ? 'active' : '' ?>">
 							<a href="<?= base_url('#') ?>" class='sidebar-link'>
 								<i class="bi bi-cash"></i>
 								<span>Fine</span>
 							</a>
 						</li> -->
 
-						<li class="sidebar-title">Example</li>
-						<li class="sidebar-item  has-sub">
-							<a href="#" class='sidebar-link'>
-								<i class="bi bi-person-badge-fill"></i>
-								<span>Authentication</span>
-							</a>
-							<ul class="submenu ">
-								<li class="submenu-item ">
-									<a href="auth-login.html">Login</a>
-								</li>
-								<li class="submenu-item ">
-									<a href="auth-register.html">Register</a>
-								</li>
-								<li class="submenu-item ">
-									<a href="auth-forgot-password.html">Forgot Password</a>
-								</li>
-							</ul>
-						</li>
+							<li class="sidebar-title">Example</li>
+							<li class="sidebar-item  has-sub">
+								<a href="#" class='sidebar-link'>
+									<i class="bi bi-person-badge-fill"></i>
+									<span>Authentication</span>
+								</a>
+								<ul class="submenu ">
+									<li class="submenu-item ">
+										<a href="auth-login.html">Login</a>
+									</li>
+									<li class="submenu-item ">
+										<a href="auth-register.html">Register</a>
+									</li>
+									<li class="submenu-item ">
+										<a href="auth-forgot-password.html">Forgot Password</a>
+									</li>
+								</ul>
+							</li>
 
-						<?php endif;?>
+						<?php endif; ?>
 					</ul>
 				</div>
 				<button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
@@ -151,7 +151,7 @@
 										<h6 class="dropdown-header">Hello, <?= $users->nama; ?></h6>
 									</li>
 									<li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
-												Profile</a></li>
+											Profile</a></li>
 									<li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
 											Settings</a></li>
 									<li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
